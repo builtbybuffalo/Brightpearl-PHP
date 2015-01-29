@@ -17,14 +17,14 @@ class ResponseSearchModel extends ResponseClassInterface
      * @var array
      */
     protected $results;
-    
+
     /**
      * Columns
      *
      * @var array
      */
     protected $columns;
-    
+
     /**
      * FromCommand
      *
@@ -35,17 +35,17 @@ class ResponseSearchModel extends ResponseClassInterface
     {
         $response = $command->getResponse();
         $json = $response->json();
-        
+
         $columns = self::getColumnNames($json['response']['metaData']['columns']);
         $results = $json['response']['results'];
-        
+
         // reformat the results
         $results = self::formatSearchResults($results, $columns);
-        
+
         // return the model
         return new self($results, $columns);
     }
-    
+
     /**
      * Constructor
      *
@@ -56,16 +56,16 @@ class ResponseSearchModel extends ResponseClassInterface
         $this->results = $results;
         $this->columns = $columns;
     }
-    
+
     /**
      * FormatSearchResults
      *
-     * @return void
+     * @return array
      * @author James Pudney
      */
     protected static function formatSearchResults($results, $columns)
     {
-		foreach ($results as $result) {
+		foreach ($results as &$result) {
 			foreach ($columns as $col_key => $col_value) {
 				$result[$col_value] = $result[$col_key];
 				unset($result[$col_key]);
@@ -74,7 +74,7 @@ class ResponseSearchModel extends ResponseClassInterface
 
 		return $results;
     }
-    
+
     /**
      * Get Columns Names
      *
@@ -84,11 +84,11 @@ class ResponseSearchModel extends ResponseClassInterface
     protected static function getColumnNames($columns)
     {
         $columnNames = array();
-        
+
         foreach ($columns as $column) {
             $columnNames[] = $column['name'];
         }
-        
+
         return $columnNames;
     }
 } // END class ResponseSearchModel extends ResponseClassInterface

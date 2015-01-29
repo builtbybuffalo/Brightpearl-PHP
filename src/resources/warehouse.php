@@ -58,6 +58,36 @@ return array(
             ),
         ),
 
+        /**
+         *    getGoodsOutNote() method
+         *
+         *    reference: https://www.brightpearl.com/developer/latest/warehouse/goods-out-note/get.html
+         */
+        "getGoodsOutNote" => array(
+            "httpMethod" => "GET",
+            "uri" => "/{apiVersion}/{account_code}/warehouse-service/order/{orderId}/goods-note/goods-out/{id}",
+            "summary" => "Get goods-out note(s)",
+            "responseModel" => "defaultJsonResponse",
+            "parameters" => array(
+
+                "orderId" => array(
+                    "type" => "string",
+                    "location" => "uri",
+                    "description" => "Id of order(s) to use",
+                    "default" => "*",
+                    "required" => false,
+                ),
+
+                "id" => array(
+                    "type" => "string",
+                    "location" => "uri",
+                    "description" => "Id of goods-out-note(s) to get",
+                    "required" => false,
+                ),
+
+            ),
+        ),
+
     ),
 
     /*
