@@ -36,6 +36,23 @@ return array(
             ),
         ),
 
+        "getOption" => array(
+            "httpMethod" => "GET",
+            "uri" => "/{apiVersion}/{account_code}/product-service/option/{id}",
+            "summary" => "Retrieve option(s)",
+            "responseModel" => "defaultJsonResponse",
+            "parameters" => array(
+
+                "id" => array(
+                    "type" => "string",
+                    "location" => "uri",
+                    "description" => "Option IDs",
+                    "required" => false,
+                ),
+
+            ),
+        ),
+
         /**
          *    optionsProduct() method
          *
