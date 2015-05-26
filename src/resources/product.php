@@ -425,6 +425,26 @@ return array(
         ),
 
         /**
+         *    getBrand() method
+         *
+         *    reference: https://www.brightpearl.com/developer/latest/product/brand/get.html
+         */
+        "getBrand" => array(
+            "httpMethod" => "GET",
+            "uri" => "/{apiVersion}/{account_code}/product-service/brand/{id}",
+            "summary" => "Get brand data",
+            "responseModel" => "defaultJsonResponse",
+            "parameters" => array(
+                "id" => array(
+                    "type" => "string",
+                    "location" => "uri",
+                    "description" => "The brand ID",
+                    "required" => false,
+                ),
+            ),
+        ),
+
+        /**
          *    getProductPrice() method
          *
          *    reference: https://www.brightpearl.com/developer/latest/product/product-price/get.html
