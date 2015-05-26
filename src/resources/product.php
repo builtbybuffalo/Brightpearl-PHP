@@ -393,6 +393,12 @@ return array(
                     "required" => false,
                 ),
 
+                "SKU" => array(
+                    "type" => "string",
+                    "location" => "query",
+                    "description" => "The SKU to search",
+                    "required" => false,
+                ),
             ),
         ),
 
