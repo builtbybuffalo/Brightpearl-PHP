@@ -37,6 +37,35 @@ return array(
         ),
 
         /**
+         *    postSimulateWebhook() method
+         *
+         *    reference: https://www.brightpearl.com/developer/latest/integration/webhook-simulate/post.html
+         */
+        "postSimulateWebhook" => array(
+            "httpMethod" => "POST",
+            "uri" => "/{apiVersion}/{account_code}/integration-service/webhook/{id}/simulate",
+            "summary" => "Get webhook(s) for resource events",
+            "responseModel" => "defaultJsonResponse",
+            "parameters" => array(
+
+                "id" => array(
+                    "type" => "string",
+                    "location" => "uri",
+                    "description" => "Id of webhook(s) to retrieve",
+                    "required" => false,
+                ),
+
+                "testData" => array(
+                    "type" => "array",
+                    "location" => "json",
+                    "description" => "The data to fire",
+                    "required" => false,
+                ),
+
+            ),
+        ),
+
+        /**
          *    postWebhook() method
          *
          *    reference: https://www.brightpearl.com/developer/latest/integration/webhook/post.html
