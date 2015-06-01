@@ -212,7 +212,7 @@ return array(
                         "location" => "json",
                         "required" => true,
                     ),
-                    "description" => array(
+                    "_description" => array(
                         "type" => "array",
                         "location" => "json",
                         "languageCode" => array(
