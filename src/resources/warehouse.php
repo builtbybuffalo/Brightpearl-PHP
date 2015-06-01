@@ -88,6 +88,43 @@ return array(
             ),
         ),
 
+        /**
+         *    postOrderReservation() method
+         *
+         *    reference: https://www.brightpearl.com/developer/latest/warehouse/reservation/post.html
+         */
+        "postOrderReservation" => array(
+            "httpMethod" => "POST",
+            "uri" => "/{apiVersion}/{account_code}/warehouse-service/order/{orderId}/reservation/warehouse/{warehouseId}",
+            "summary" => "Create a warehouse reservation",
+            "responseModel" => "defaultJsonResponse",
+            "parameters" => array(
+
+                "orderId" => array(
+                    "type" => "string",
+                    "location" => "uri",
+                    "description" => "Id of order(s) to use",
+                    "default" => "*",
+                    "required" => false,
+                ),
+
+                "warehouseId" => array(
+                    "type" => "string",
+                    "location" => "uri",
+                    "description" => "ID of the warehouse to send items from",
+                    "required" => false,
+                ),
+
+                "products" => array(
+                    "type" => "array",
+                    "location" => "json",
+                    "description" => "The product data to send",
+                    "required" => false,
+                ),
+
+            ),
+        ),
+
     ),
 
     /*
