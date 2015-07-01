@@ -89,6 +89,56 @@ return array(
         ),
 
         /**
+         *    postGoodsOutNote() method
+         *
+         *    reference: https://www.brightpearl.com/developer/latest/warehouse/reservation/post.html
+         */
+        "postGoodsOutNote" => array(
+            "httpMethod" => "POST",
+            "uri" => "/{apiVersion}/{account_code}/warehouse-service/order/{orderId}/goods-note/goods-out",
+            "summary" => "Create a goods out note",
+            "responseModel" => "defaultJsonResponse",
+            "parameters" => array(
+
+                "orderId" => array(
+                    "type" => "string",
+                    "location" => "uri",
+                    "description" => "Id of order(s) to use",
+                    "default" => "*",
+                    "required" => false,
+                ),
+
+                "priority" => array(
+                    "type" => "boolean",
+                    "location" => "json",
+                    "description" => "Whether or not this is priority",
+                    "required" => false,
+                ),
+
+                "shippingMethodId" => array(
+                    "type" => "integer",
+                    "location" => "json",
+                    "description" => "Shipping Method ID",
+                    "required" => false,
+                ),
+
+                "labelUrl" => array(
+                    "type" => "string",
+                    "location" => "json",
+                    "description" => "The shipping label URL",
+                    "required" => false,
+                ),
+
+                "warehouses" => array(
+                    "type" => "array",
+                    "location" => "json",
+                    "description" => "The product data to send",
+                    "required" => false,
+                ),
+            ),
+        ),
+
+        /**
          *    postOrderReservation() method
          *
          *    reference: https://www.brightpearl.com/developer/latest/warehouse/reservation/post.html
