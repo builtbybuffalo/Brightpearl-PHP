@@ -139,6 +139,34 @@ return array(
         ),
 
         /**
+         *    postGoodsOutNote() method
+         *
+         *    reference: https://www.brightpearl.com/developer/latest/warehouse/goods-out-note%20event/post.html
+         */
+        "postGoodsOutEvent" => array(
+            "httpMethod" => "POST",
+            "uri" => "/{apiVersion}/{account_code}/warehouse-service/goods-note/goods-out/{goodsOutId}/event",
+            "summary" => "Fire an event on a goods out note",
+            "responseModel" => "defaultJsonResponse",
+            "parameters" => array(
+
+                "goodsOutId" => array(
+                    "type" => "string",
+                    "location" => "uri",
+                    "description" => "Id of goods out note to use",
+                    "required" => true,
+                ),
+
+                "events" => array(
+                    "type" => "array",
+                    "location" => "json",
+                    "description" => "the events to fire",
+                    "required" => false,
+                ),
+            ),
+        ),
+
+        /**
          *    postOrderReservation() method
          *
          *    reference: https://www.brightpearl.com/developer/latest/warehouse/reservation/post.html
