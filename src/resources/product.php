@@ -473,7 +473,7 @@ return array(
          *    reference: https://www.brightpearl.com/developer/latest/product/brand/post.html
          */
         "postBrand" => array(
-            "httpMethod" => "GET",
+            "httpMethod" => "POST",
             "uri" => "/{apiVersion}/{account_code}/product-service/brand",
             "summary" => "Create brand",
             "responseModel" => "defaultJsonResponse",
