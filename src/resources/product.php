@@ -53,6 +53,29 @@ return array(
             ),
         ),
 
+        "postOptionValue" => array(
+            "httpMethod" => "POST",
+            "uri" => "/{apiVersion}/{account_code}/product-service/option/{id}/value",
+            "summary" => "Create an Option value",
+            "responseModel" => "defaultJsonResponse",
+            "parameters" => array(
+
+                "id" => array(
+                    "type" => "string",
+                    "location" => "uri",
+                    "description" => "Option ID",
+                    "required" => false,
+                ),
+
+                "optionValueName" => array(
+                    "type" => "string",
+                    "location" => "json",
+                    "description" => "Name",
+                    "required" => true,
+                ),
+            ),
+        ),
+
         "getOptionValue" => array(
             "httpMethod" => "GET",
             "uri" => "/{apiVersion}/{account_code}/product-service/option/{id}/value",
@@ -439,6 +462,32 @@ return array(
                     "type" => "string",
                     "location" => "uri",
                     "description" => "The brand ID",
+                    "required" => false,
+                ),
+            ),
+        ),
+
+        /**
+         *    postBrand() method
+         *
+         *    reference: https://www.brightpearl.com/developer/latest/product/brand/post.html
+         */
+        "postBrand" => array(
+            "httpMethod" => "GET",
+            "uri" => "/{apiVersion}/{account_code}/product-service/brand",
+            "summary" => "Create brand",
+            "responseModel" => "defaultJsonResponse",
+            "parameters" => array(
+                "name" => array(
+                    "type" => "string",
+                    "location" => "json",
+                    "description" => "The brand name",
+                    "required" => true,
+                ),
+                "description" => array(
+                    "type" => "string",
+                    "location" => "json",
+                    "description" => "The brand description",
                     "required" => false,
                 ),
             ),

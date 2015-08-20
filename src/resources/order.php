@@ -127,8 +127,8 @@ return array(
                 "parties" => array(
                     "type" => "array",
                     "location" => "json",
-                    "description" => "The date you wish to have the Order delivered On.",
-                    "required" => true,
+                    "description" => "The parties involved in the order.",
+                    "required" => false,
                     "customer" => array(
                         "type" => "array",
                         "location" => "json",

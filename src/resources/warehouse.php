@@ -203,6 +203,57 @@ return array(
             ),
         ),
 
+        /**
+         *    postGoodsInNote() method
+         *
+         *    reference: https://www.brightpearl.com/developer/latest/warehouse/goods-in-note/post.html
+         */
+        "postGoodsInNote" => array(
+            "httpMethod" => "POST",
+            "uri" => "/{apiVersion}/{account_code}/warehouse-service/order/{orderId}/goods-note/goods-in",
+            "summary" => "Create a goods in note",
+            "responseModel" => "defaultJsonResponse",
+            "parameters" => array(
+
+                "orderId" => array(
+                    "type" => "string",
+                    "location" => "uri",
+                    "description" => "Id of order(s) to use",
+                    "default" => "*",
+                    "required" => false,
+                ),
+
+                "transfer" => array(
+                    "type" => "boolean",
+                    "location" => "json",
+                    "description" => "Whether the note is because of a transfer",
+                    "required" => false,
+                ),
+
+                "warehouseId" => array(
+                    "type" => "string",
+                    "location" => "json",
+                    "description" => "The location to put the stock",
+                    "required" => true,
+                ),
+
+                "goodsMoved" => array(
+                    "type" => "array",
+                    "location" => "json",
+                    "description" => "The lines to move",
+                    "required" => true,
+                ),
+
+                "receivedOn" => array(
+                    "type" => "string",
+                    "location" => "json",
+                    "description" => "The date this was received",
+                    "required" => true,
+                ),
+            ),
+        ),
+
+
     ),
 
     /*
