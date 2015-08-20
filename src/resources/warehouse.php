@@ -139,6 +139,35 @@ return array(
         ),
 
         /**
+         *    postStockCorrection() method
+         *
+         *    reference: https://www.brightpearl.com/developer/latest/warehouse/stock-correction/post.html
+         */
+        "postStockCorrection" => array(
+            "httpMethod" => "POST",
+            "uri" => "/{apiVersion}/{account_code}/warehouse-service/warehouse/{warehouseId}/stock-correction",
+            "summary" => "Create a goods out note",
+            "responseModel" => "defaultJsonResponse",
+            "parameters" => array(
+
+                "warehouseId" => array(
+                    "type" => "string",
+                    "location" => "uri",
+                    "description" => "Id of warehouse to correct",
+                    "default" => "*",
+                    "required" => false,
+                ),
+
+                "corrections" => array(
+                    "type" => "array",
+                    "location" => "json",
+                    "description" => "A list of corrections",
+                    "required" => true,
+                ),
+            ),
+        ),
+
+        /**
          *    postGoodsOutNote() method
          *
          *    reference: https://www.brightpearl.com/developer/latest/warehouse/goods-out-note%20event/post.html
